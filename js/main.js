@@ -55,11 +55,8 @@ let appData = {
     expensesMonth:0,
     start: function() { 
 
-        if(salaryAmount.value === ''){
-            start.disabled = true;
-            return;
-        }else{
-            start.disabled = false;
+        
+            
             appData.budget = +salaryAmount.value;
             appData.getExpenses();
             appData.getIncome();
@@ -75,7 +72,7 @@ let appData = {
             appData.getBudget();
             
             appData.showResult();
-        }
+        
         
     },
     showResult:function () {  
@@ -223,7 +220,23 @@ let appData = {
     }
 };
 
-
+start.disabled = true;
+salaryAmount.addEventListener('input', () => {
+    if(salaryAmount.value !== ''){
+        start.disabled = false;
+        
+    }else{
+        start.disabled = true;
+    }
+    
+});
+// if(salaryAmount.value === ''){
+//     start.disabled = true;
+    
+// }else if(salaryAmount.value !== ''){
+//     start.disabled = false;
+    
+// }
 start.addEventListener('click', appData.start);
 incomeAdd.addEventListener('click', appData.addIncomeBlock);
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
