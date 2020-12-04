@@ -30,8 +30,7 @@ let depositAmount = document.querySelector('.deposit-amount'); // Сумма з�
 let depositPercent = document.querySelector('.deposit-percent'); // Процент депозита
 let depositBank = document.querySelector('.deposit-bank'); // Банк с депозитом
 
-let allNames = document.querySelectorAll('[placeholder="Наименование"]');
-let allSum = document.querySelectorAll('[placeholder="Сумма"]');
+
 
 
 let isNumber = function(n) {  
@@ -238,19 +237,23 @@ salaryAmount.addEventListener('input', () => {
 //     start.disabled = false;
     
 // }
+
+start.addEventListener('click', appData.start);
+incomeAdd.addEventListener('click', appData.addIncomeBlock);
+expensesAdd.addEventListener('click', appData.addExpensesBlock);
+periodSelect.addEventListener('input', appData.showPeriod)
+
 document.addEventListener('input', function(){
+
+    let allNames = document.querySelectorAll('[placeholder="Наименование"]');
+    let allSum = document.querySelectorAll('[placeholder="Сумма"]');
     for(let i = 0; i<allNames.length; i++){
         allNames[i].value =  allNames[i].value.replace(/[^А-Яа-яЁё .,]/g, '');
     };
     for(let i = 0; i<allSum.length; i++){
         allSum[i].value =  allSum[i].value.replace(/[^+\d]/g, '');
     }
+    
 });
-start.addEventListener('click', appData.start);
-incomeAdd.addEventListener('click', appData.addIncomeBlock);
-expensesAdd.addEventListener('click', appData.addExpensesBlock);
-periodSelect.addEventListener('input', appData.showPeriod)
-
-
 
 
