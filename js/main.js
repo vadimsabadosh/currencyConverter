@@ -32,8 +32,7 @@ let depositBank = document.querySelector('.deposit-bank'); // Банк с деп
 
 let allNames = document.querySelectorAll('[placeholder="Наименование"]');
 let allSum = document.querySelectorAll('[placeholder="Сумма"]');
-let regName = /([а-яА-ЯЁ-ё ._?!@,-])+/g;
-let regNum = /([0-9]{1,10})/g;
+
 
 let isNumber = function(n) {  
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -54,43 +53,7 @@ let appData = {
     budgetDay: 0,
     budgetMonth: 0,
     expensesMonth:0,
-    validation: function (callback) {  
-        let valid;
-        for(let i = 0; i<allNames.length; i++){
-            
-            if(allNames[i].value.match(regName) || allNames[i].value.trim() === ''){
-                valid = true;
-                
-            }else{
-                
-                if(i<allNames.length){
-                    alert('В поля "Наименование" разрешено ввожить только кирилличиские буквы  и знаки препинания');
-                    valid = false;
-                }
-            }
-        };
-        for(let i = 0; i<allSum.length; i++){
-            if(isNumber(allSum[i].value) || allSum[i].value.trim() === ''){
-                if(!valid){
-                    valid = true;
-                }else{
-                    valid = true;
-                }
-            }else{
-                if(i<allSum.length){
-                    alert('Вы ввели не число');
-                }
-            }
-        }
-        console.log(valid);
-        if(valid){
-            callback();
-        }else{
-            return;
-        } 
-        
-        
-    },
+    
     start: function() { 
                     appData.budget = +salaryAmount.value;
                     appData.getExpenses();
@@ -275,6 +238,14 @@ salaryAmount.addEventListener('input', () => {
 //     start.disabled = false;
     
 // }
+document.addEventListener('input', function(){
+    for(let i = 0; i<allNames.length; i++){
+        allNames[i].value =  allNames[i].value.replace(/[^А-Яа-яЁё .,]/g, '');
+    };
+    for(let i = 0; i<allSum.length; i++){
+        allSum[i].value =  allSum[i].value.replace(/[^+\d]/g, '');
+    }
+});
 start.addEventListener('click', appData.start);
 incomeAdd.addEventListener('click', appData.addIncomeBlock);
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
