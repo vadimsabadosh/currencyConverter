@@ -65,7 +65,7 @@ let appData = {
                     appData.getAddExpenses();
                     appData.getAddIncome();
                     appData.getBudget();
-                    appData.validation(appData.showResult);
+                    appData.showResult();
                     
     },
     showResult:function () {  
