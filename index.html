@@ -3,10 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson15_part2</title>
-    <script src="js/main.js" defer></script>
+    <title>Lesson29 Converter</title>
+
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+  <div class="container">
+    <h2>Конвертер валют</h2>
+    <p>Последнее обновление: <b class="date"></b></p>
+
+    <h4>Выберите валюту</h4>
+    <div class="group">
+      <div class="currency-block">
+        <input type="radio" id='USD' class="curr-input" name='currency' value="USD" checked>
+        <label for='USD'>Доллар США (USD)</label>
+      </div>
+      <div class="currency-block">
+        <input type="radio" id='EUR' class="curr-input" name='currency' value="EUR">
+        <label for='EUR'>Европейский ЕВРО (EUR)</label>
+      </div>
+    </div>
+
+    <!----------------------------------->
+
+
+    <div class="group group-inputs">
+      <div class="currency-block">
+        <input type="number" class="first-input">
+        <h5 class="first-input-text">Доллар США (USD)</h5>
+      </div>
+      <div class="arrow"><img src="./img/arr.png" alt=""></div>
+      <div class="currency-block">
+        <input type="number" class="first-result" disabled>
+        <h5 class="first-text">Российский рубль (RUB)</h5>
+      </div>
+    </div>
+    <!----------------------------------->
+    <div class="group group-inputs">
+      <div class="currency-block">
+        <input type="number" class="second-input">
+        <h5 class="second-text">Российский рубль (RUB)</h5>
+      </div>
+      <div class="arrow"><img src="./img/arr.png" alt=""></div>
+      <div class="currency-block">
+        <input type="number" class="second-result" disabled>
+        <h5 class="second-input-text">Доллар США (USD)</h5>
+      </div>
+    </div>
+  <!-------------------------------------->
+  </div>
+
+
+
+<script src='./js/main.js'></script>
 </body>
 </html>

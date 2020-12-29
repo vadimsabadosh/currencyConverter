@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1;
+  display: flex;
+  font-family: "Nunito", sans-serif;
+  background: url(../img/bg.jpg) no-repeat center / cover;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  margin: auto;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.80);
+  border: 1px solid #dfe6e9;
+  border-radius: 10px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2d3436;
+}
+.container h4{
+  text-align: center;
+}
+.container p {
+  margin-bottom: 20px;
+  color: #636e72;
+  text-align: center;
+}
+.container .group {
+  margin: 15px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  width: 100%;
+}
+.container .group.group-inputs {
+
+  grid-template-columns: 1fr 0.2fr 1fr;
+}
+
+.container .group input, .container .group select {
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid #b2bec3;
+  width: 100%;
+  padding: 10px;
+  margin-right: 5px;
+}
+.container .group .currency-block{
+display: flex;
+align-items: center;
+}
+.container .group input[type='radio']{
+  width: 30%;
+  height: 20px;
+}
