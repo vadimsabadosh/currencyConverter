@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const labelUSD = document.querySelector('label[for="USD"]').textContent;
     const labelEUR = document.querySelector('label[for="EUR"]').textContent;
     const dateText = document.querySelector('.date');
-
     const firstInput = document.querySelector('.first-input');
     const firstInputText = document.querySelector('.first-input-text');
     const firstResult = document.querySelector('.first-result');
-    
     const secondInput = document.querySelector('.second-input');
     const secondInputText = document.querySelector('.second-input-text');
     const secondResult = document.querySelector('.second-result');
